@@ -1,0 +1,12 @@
+<h3>¿Estás seguro que quieres borrar este articulo?</h3>
+<div class="text-center">
+  <p><span class="fw-bold">ID: </span>{{articulo.id}}</p>
+  <p><span class="fw-bold">Nombre: </span>{{articulo.nombre}}</p>
+  <p><span class="fw-bold">Descripcion: </span>{{articulo.descripcion}}</p>
+  <p><span class="fw-bold">Precio: </span>{{articulo.precio}}</p>
+  <div class="text-center">
+    <button (click)="delete(articulo.id)" class="btn btn-danger">Borrar</button>
+    <button (click)="back()" class="btn btn-success">Cancelar</button>
+  </div>
+</div>
+

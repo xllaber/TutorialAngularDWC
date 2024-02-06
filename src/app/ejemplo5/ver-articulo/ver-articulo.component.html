@@ -1,0 +1,17 @@
+<h3 class="text-center">{{articulo.nombre}}</h3>
+<div class="d-flex">
+  <div class="form-group m-auto">
+    <input type="text" class="form-control" [(ngModel)]="id" [value] = articulo.id hidden="hidden">
+    <label for="name" class="fw-bold">Nombre:</label>
+    <input type="text" id="name" class="form-control" [(ngModel)]="nombre" [value]="articulo.nombre" [disabled]="disabled">
+    <label for="desc" class="fw-bold">Descripcion:</label>
+    <input type="text" id="desc" class="form-control" [(ngModel)]="descripcion" [value]="articulo.descripcion" [disabled]="disabled">
+    <label for="price" class="fw-bold">Precio:</label>
+    <input type="text" id="price" class="form-control" [(ngModel)]="precio" [value]="articulo.precio" [disabled]="disabled">
+    <div class="text-center">
+      <button *ngIf="disabled" (click)="modify()" class="btn btn-primary">Modificar</button>
+      <button *ngIf="!disabled" (click)="save()" class="btn btn-success">Guardar</button>
+      <button (click)="back()" class="btn btn-danger">Volver</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<h3 class="text-center">Añadir articulo nuevo</h3>
+<div class="text-center">
+  <div class="">
+    <label for="id" class="fw-bold">Id:</label> <br>
+    <input id="id" type="text" [(ngModel)]="id">
+  </div>
+  <div>
+    <label for="name" class="fw-bold">Nombre:</label> <br>
+    <input id="name" type="text" [(ngModel)]="nombre">
+  </div>
+  <div>
+    <label for="description" class="fw-bold">Description:</label> <br>
+    <input id="description" type="text" [(ngModel)]="descripcion">
+  </div>
+  <div>
+    <label for="price" class="fw-bold">Precio:</label> <br>
+    <input id="price" type="text" [(ngModel)]="precio">
+  </div>
+  <br>
+  <p *ngIf="duplicado" class="alert alert-danger">El articulo ya existe</p>
+  <button class="btn btn-success m-2" (click)="save()">Guardar</button>
+  <button class="btn btn-danger" (click)="cancel()">Cancelar</button>
+</div>
