@@ -1,0 +1,8 @@
+<div class="text-center">
+  <label for="nombre" class="form-label">Nombre:</label>
+  <input type="text" class="form-control" [(ngModel)]="cliente.nombre" id="nombre">
+  <label for="cargo" class="form-label">Cargo:</label>
+  <input type="text" class="form-control" [(ngModel)]="cliente.cargo" id="cargo">
+  <p class="alert alert-danger" *ngIf="error">{{errorText}}</p>
+  <button class="btn btn-success" (click)="save()">Guardar</button>
+</div>
