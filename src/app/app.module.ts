@@ -30,6 +30,7 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { LoginErrorComponent } from './login-error/login-error.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ClienteDetailComponent } from './cliente-detail/cliente-detail.component';
+import { AddClienteComponent } from './add-cliente/add-cliente.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { ClienteDetailComponent } from './cliente-detail/cliente-detail.componen
     ArticlulosFilterComponent,
     ClientesComponent,
     LoginErrorComponent,
-    ClienteDetailComponent
+    ClienteDetailComponent,
+    AddClienteComponent
   ],
   imports: [
     BrowserModule,

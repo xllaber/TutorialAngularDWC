@@ -1,9 +1,12 @@
 <div class="text-center">
-  <p><b>ID:</b> {{cliente.id}}</p>
-  <p><b>Nombre:</b> {{cliente.nombre}}</p>
-  <p><b>Cargo:</b> {{cliente.cargo}}</p>
+  <label for="id" class="form-label">ID:</label>
+  <input type="text" class="form-control" disabled [(ngModel)]="id" id="id">
+  <label for="nombre" class="form-label">Nombre:</label>
+  <input type="text" class="form-control" [disabled]="disabled" [(ngModel)]="cliente.nombre" id="nombre">
+  <label for="cargo" class="form-label">Cargo:</label>
+  <input type="text" class="form-control" [disabled]="disabled" [(ngModel)]="cliente.cargo" id="cargo">
+  <button class="btn btn-primary" *ngIf=" disabled" (click)="edit()">Editar</button>
+  <button class="btn btn-success" *ngIf="!disabled" (click)="save()">Confirmar</button>
 </div>
-<button class="btn btn-primary" (click)="volver()">
-  Volver
-</button>
+<button class="btn btn-primary" (click)="volver()">Volver</button>
 

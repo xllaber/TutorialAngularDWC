@@ -22,6 +22,21 @@ export class ServicioHttpService {
       .pipe(catchError(this.handleError));
   }
 
+  postCliente(cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>(this.url, cliente)
+      .pipe(catchError(this.handleError));
+  }
+
+  putCliente(cliente: Cliente): Observable<Cliente> {
+    return this.http.put<Cliente>(this.url + `/${cliente.id}`, cliente)
+      .pipe(catchError(this.handleError));
+  }
+
+  deleteCliente(id: number): Observable<Cliente> {
+    return this.http.delete<Cliente>(this.url + `/${id}`)
+      .pipe(catchError(this.handleError));
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.

@@ -1,4 +1,5 @@
 <h4>Listado de Clientes</h4> <br>
+<button class="btn btn-success" (click)="newCliente()">Nuevo</button>
 <table class="table table-striped">
   <thead>
   <tr>
@@ -14,6 +15,9 @@
     <td>{{cliente.cargo}}</td>
     <td>
       <button class="btn btn-primary" (click)="ver(cliente.id)">VER</button>
+    </td>
+    <td>
+      <button class="btn btn-danger" (click)="delete(cliente.id)"><i class="fa-solid fa-trash"></i></button>
     </td>
   </tr>
   </tbody>

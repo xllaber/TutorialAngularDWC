@@ -27,4 +27,14 @@ export class ClientesComponent implements OnInit{
     }
   }
 
+  newCliente() {
+    this.router.navigate(['/nuevo']);
+  }
+
+  delete(id: number | undefined) {
+    if (id) this.httpService.deleteCliente(id).subscribe();
+    window.location.reload();
+
+  }
+
 }

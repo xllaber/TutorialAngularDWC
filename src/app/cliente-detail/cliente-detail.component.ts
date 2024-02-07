@@ -12,6 +12,9 @@ export class ClienteDetailComponent implements OnInit{
 
   cliente!: Cliente;
   id!: number;
+  disabled: boolean = true;
+  nombre!: string;
+  cargo!: string;
 
   constructor(private activatedRoute: ActivatedRoute,
               private httpService: ServicioHttpService,
@@ -21,6 +24,17 @@ export class ClienteDetailComponent implements OnInit{
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['id'];
     this.httpService.getCliente(this.id).subscribe(c => this.cliente = c);
+  }
+
+  edit() {
+    this.disabled = false;
+  }
+
+  save() {
+    this.httpService.putCliente(this.cliente).subscribe({
+        next: datos => this.router.navigate(['/clientes']),
+        error: err => console.error(err.status)
+      });
   }
 
   volver() {

@@ -20,6 +20,7 @@ import {Guard1Guard} from "./guards/guard1.guard";
 import {LoginErrorComponent} from "./login-error/login-error.component";
 import {LoggedInGuard} from "./guards/logged-in.guard";
 import {ClienteDetailComponent} from "./cliente-detail/cliente-detail.component";
+import {AddClienteComponent} from "./add-cliente/add-cliente.component";
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -39,7 +40,8 @@ const routes: Routes = [
   {path: 'articulosFiltrados', component: ArticlulosFilterComponent},
   {path: 'loginError', component: LoginErrorComponent},
   {path: 'clientes', canActivate: [LoggedInGuard], component: ClientesComponent},
-  {path: 'clientes/:id', component: ClienteDetailComponent}
+  {path: 'clientes/:id', component: ClienteDetailComponent},
+  {path: 'nuevo', component: AddClienteComponent}
 ];
 
 @NgModule({
