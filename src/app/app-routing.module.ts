@@ -21,6 +21,7 @@ import {LoginErrorComponent} from "./login-error/login-error.component";
 import {LoggedInGuard} from "./guards/logged-in.guard";
 import {ClienteDetailComponent} from "./cliente-detail/cliente-detail.component";
 import {AddClienteComponent} from "./add-cliente/add-cliente.component";
+import {PasswordGuard} from "./guards/password.guard";
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -32,14 +33,14 @@ const routes: Routes = [
   { path: 'ejemplo4', component: Ejemplo4Component },
   { path: 'ejemplo4v2', component: Ejemplo4v2Component },
   { path: 'ejemplo4v4', component: Ejemplo4v4Component },
-  { path: 'ejemplo5', component: Ejemplo5Component },
+  { path: 'ejemplo5', canActivate: [PasswordGuard], component: Ejemplo5Component },
   {path: 'add', component: AddArticuloComponent},
   {path: 'articulo/:id', component: VerArticuloComponent},
   {path: 'borrar/:id', component: BorrarArticuloComponent},
   {path: 'filter', component: FilterComponent},
   {path: 'articulosFiltrados', component: ArticlulosFilterComponent},
   {path: 'loginError', component: LoginErrorComponent},
-  {path: 'clientes', canActivate: [LoggedInGuard], component: ClientesComponent},
+  {path: 'clientes', canActivate: [PasswordGuard], component: ClientesComponent},
   {path: 'clientes/:id', component: ClienteDetailComponent},
   {path: 'nuevo', component: AddClienteComponent}
 ];
